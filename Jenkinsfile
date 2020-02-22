@@ -29,6 +29,7 @@ pipeline {
            sh "aws ecr get-login --no-include-email --region us-east-2 | awk '{printf \$6}' | docker login -u AWS  https://179321150718.dkr.ecr.us-east-2.amazonaws.com --password-stdin"
             
             sh "docker image push ${REPO_URL}"
+            sh "rm -rf eetman-position-simulator_master@tmp"
          }
       }
 
