@@ -35,7 +35,8 @@ pipeline {
 
       stage('Deploy to Cluster') {
           steps {
-                    sh 'cat  ${WORKSPACE}/deploy.yaml | kubectl apply -f -'
+                  
+             sh "kubectl apply -f  ${WORKSPACE}/deploy.yaml"
           }
       }
    }
