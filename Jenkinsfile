@@ -26,7 +26,7 @@ pipeline {
       stage('Build and Push Image') {
          steps {
             sh "docker image build -t ${REPO_URL}:${BUILD_ID} ."
-           sh "aws ecr get-login --no-include-email --region us-east-1 | awk '{printf \$6}' | docker login -u AWS  https://179321150718.dkr.ecr.us-east-2.amazonaws.com --password-stdin"
+           sh "aws ecr get-login --no-include-email --region us-east-2 | awk '{printf \$6}' | docker login -u AWS  https://179321150718.dkr.ecr.us-east-2.amazonaws.com --password-stdin"
             
             sh "docker image push ${REPO_URL}"
          }
