@@ -25,7 +25,8 @@ pipeline {
 
       stage('Build and Push Image') {
          steps {
-           sh 'docker image build -t ${REPOSITORY_TAG} .'
+          sh 'docker image build -t ssumathe/myfleetmanorg-fleetman-webapp:1.1 .'
+           sh 'docker image push "179321150718.dkr.ecr.us-east-2.amazonaws.com/ssumathe/myfleetmanorg-fleetman-webapp:1.1"'
          }
       }
 
